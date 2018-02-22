@@ -29,25 +29,39 @@ public class Calculadora {
     public double getResultado() {
         return resultado;
     }
-     /* Método prioridades de los operadores. Regresa 0,
-     * el valor más pequeño, cuando el dato dado es un "(". Si es
+     /* Método prioridades de los operadores. Regresa 3,
+     * el valor más grande, cuando el dato dado es un "(". Si es
      * el "(" , sólo se saca de la pila cuando se encuentre un ")".
      */
-     private int checkPriority(){
-        int resp = 0; // si es un paréntesis izquierdo
+     private int priorityOfOperators(){
+        int resp = 3; // si es un paréntesis izquierdo
         
         if (expresion.charAt(0)=='+' || expresion.charAt(0)=='-'){
-                resp = 1;
+                resp = 2;
         }//if
             else
                   if(expresion.charAt(0)=='*' || expresion.charAt(0)=='/'){
-                    resp = 2;
+                    resp = 1;
                   }
                            else
                                   if(expresion.charAt(0)=='^')
-                                      resp=3;
+                                      resp=0;
         return resp;
-    }//priorityOfOperations
+    }//priorityOfOperators
+   
+    /* Método que revisa al operador actual y al operador que ya esta en la pila.
+     * Calcula la prioridad del operador actual, es decir, calcula el numero de prioridad del
+     * operador que está en el tope. Si el operador actual tiene un numero de prioridad menor
+     * que el el operador que está en el tope de la pila, significa que tiene mayor importancia,
+     * entonces regresará true, de lo contrario regresa false.
+     */
+    
+    public booelan checkPriority(char currentOperator, char topOperator){
+        if(priorityOfOperators(currentOperator)<priorityOfOperators(topOperator))
+            return true;
+        else
+            return false;
+    }
     
     public boolean analisis(){
         boolean answer=false;
