@@ -29,7 +29,10 @@ public class Calculadora {
     public double getResultado() {
         return resultado;
     }
-    
+     /* Método prioridades de los operadores. Regresa 0,
+     * el valor más pequeño, cuando el dato dado es un "(". Si es
+     * el "(" , sólo se saca de la pila cuando se encuentre un ")".
+     */
      private int priorityOfOperations(){
         int resp = 0; // si es un paréntesis izquierdo
         
