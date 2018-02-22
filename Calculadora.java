@@ -30,14 +30,18 @@ public class Calculadora {
         return resultado;
     }
     
-    //check whether the character that comes in the infix expression is either an 
-    //operator or an operand
-    public boolean isValid(){
-        boolean resp;
-        int i,n=expresion.length();
+     private int priorityOfOperations(){
+        int resp = 0; // si es un paréntesis izquierdo
         
-        while(i<n && )
-    }
+        if (expresion.charAt(0)=='+' || expresion.charAt(0)=='-')
+                resp = 1;
+            else
+                  if(expresion.charAt(0)=='*' || expresion.charAt(0)=='/')
+                    resp = 2;
+        
+        return resp;
+    }//priorityOfOperations
+    
     public boolean analisis(){
         boolean answer=false;
         PilaADT<Character> pila= new PilaA();
