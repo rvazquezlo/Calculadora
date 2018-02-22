@@ -29,22 +29,31 @@ public class Calculadora {
     public double getResultado() {
         return resultado;
     }
+    
+    /* Método auxiliar que permite separar -por medio del método split() de la clase String
+     * de Java- la cadena dada y guarda cada uno de sus elementos (operadores, operandos 
+     * y paréntesis) en un arreglo de cadenas.
+     */ 
+    private String[] separaCadena(){
+      return expresion.split("");
+    }
+    
      /* Método prioridades de los operadores. Regresa 3,
      * el valor más grande, cuando el dato dado es un "(". Si es
      * el "(" , sólo se saca de la pila cuando se encuentre un ")".
      */
-     private int priorityOfOperators(){
+     private int priorityOfOperators(String dato){
         int resp = 3; // si es un paréntesis izquierdo
         
-        if (expresion.charAt(0)=='+' || expresion.charAt(0)=='-'){
+        if (dato.charAt(0)=='+' || dato.charAt(0)=='-'){
                 resp = 2;
         }//if
             else
-                  if(expresion.charAt(0)=='*' || expresion.charAt(0)=='/'){
+                  if(dato.charAt(0)=='*' || dato.charAt(0)=='/'){
                     resp = 1;
                   }
                            else
-                                  if(expresion.charAt(0)=='^')
+                                  if(dato.charAt(0)=='^')
                                       resp=0;
         return resp;
     }//priorityOfOperators
@@ -56,12 +65,12 @@ public class Calculadora {
      * entonces regresará true, de lo contrario regresa false.
      */
     
-    public booelan checkPriority(char currentOperator, char topOperator){
+    public boolean checkPriority(String currentOperator, String topOperator){
         if(priorityOfOperators(currentOperator)<priorityOfOperators(topOperator))
             return true;
         else
             return false;
-    }
+    }//checkPriority
     
     public boolean analisis(){
         boolean answer=false;
