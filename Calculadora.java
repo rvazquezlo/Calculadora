@@ -33,15 +33,19 @@ public class Calculadora {
      * el valor más pequeño, cuando el dato dado es un "(". Si es
      * el "(" , sólo se saca de la pila cuando se encuentre un ")".
      */
-     private int priorityOfOperations(){
+     private int checkPriority(){
         int resp = 0; // si es un paréntesis izquierdo
         
-        if (expresion.charAt(0)=='+' || expresion.charAt(0)=='-')
+        if (expresion.charAt(0)=='+' || expresion.charAt(0)=='-'){
                 resp = 1;
+        }//if
             else
-                  if(expresion.charAt(0)=='*' || expresion.charAt(0)=='/')
+                  if(expresion.charAt(0)=='*' || expresion.charAt(0)=='/'){
                     resp = 2;
-        
+                  }
+                           else
+                                  if(expresion.charAt(0)=='^')
+                                      resp=3;
         return resp;
     }//priorityOfOperations
     
