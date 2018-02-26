@@ -685,7 +685,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
                 pila.pop();//sacar (
             }//end else-if
             else{
-                while(!pila.isEmpty() && prioridadOperador(elementosStr) <= prioridadOperador(pila.peek()))
+                while(!pila.isEmpty() && !pila.peek().equals("(") && prioridadOperador(elementosStr) <= prioridadOperador(pila.peek()))
                     postfija.append(pila.pop() + " ");
                 pila.push(elementosStr);
             }      
@@ -746,11 +746,11 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         if(cadena.length() > 0){
             tokens = cadena.trim().split("[ \\  ]+");
             longitud = tokens.length;
-//////            for(int i  = 0; i < tokens.length; i++)
-//////                System.out.println("."+tokens[i]+".");
+            for(int i  = 0; i < tokens.length; i++)
+                System.out.println("."+tokens[i]+".");
             if(verificaOperadoresRepetidos(tokens, longitud) && verificaDecimales(cadena, cadena.length()) && verificaParentesis(tokens, longitud) && verificaNegativos(tokens, longitud)){
                 postfija = invierteNotacion(tokens);
-//////                System.out.println(postfija);
+                System.out.println(postfija);
                 respuestaNumerica = evaluaPostfija(postfija.split(" "));
                 respuestaString = valueOf(respuestaNumerica);
             }
