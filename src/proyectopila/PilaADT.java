@@ -1,19 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectopila;
 
 /**
- *
- * @author Carlos
+ * Esta interfaz define la fincionalidad de un pila
+ * @author Jerusa Chavero González
+ * @author Marian Shanti Sánchez Barbero
+ * @author Regina Vázquez Santa María López
+ * @author Damián Pérez Landeros
  */
 public interface PilaADT <T> {
     void push(T dato);
     T pop();
     T peek();
-    boolean isEmpty();  
-    boolean equals();
+    boolean isEmpty(); 
 }
 
