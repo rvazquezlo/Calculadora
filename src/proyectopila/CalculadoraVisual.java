@@ -5,6 +5,10 @@
  */
 package proyectopila;
 
+import static java.lang.Character.isDigit;
+import static java.lang.String.valueOf;
+import java.util.ArrayList;
+
 /**
  *
  * @author RVAZQUEZLO
@@ -59,11 +63,16 @@ public class CalculadoraVisual extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Calculadora", 2, 2, new java.awt.Font("Verdana", 0, 12)))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Calculadora", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Verdana", 0, 12)))); // NOI18N
 
         jbAC.setBackground(new java.awt.Color(153, 153, 153));
         jbAC.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jbAC.setText("AC");
+        jbAC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbACActionPerformed(evt);
+            }
+        });
 
         jbParentesis1.setBackground(new java.awt.Color(153, 153, 153));
         jbParentesis1.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
@@ -86,30 +95,65 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         jbDivision.setBackground(new java.awt.Color(255, 102, 0));
         jbDivision.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jbDivision.setText("/");
+        jbDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbDivisionActionPerformed(evt);
+            }
+        });
 
         jbMultiplicacion.setBackground(new java.awt.Color(255, 102, 0));
         jbMultiplicacion.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jbMultiplicacion.setText("X");
+        jbMultiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMultiplicacionActionPerformed(evt);
+            }
+        });
 
         jbSuma.setBackground(new java.awt.Color(255, 102, 0));
         jbSuma.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jbSuma.setText("+");
+        jbSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSumaActionPerformed(evt);
+            }
+        });
 
         jbMenos.setBackground(new java.awt.Color(255, 102, 0));
         jbMenos.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jbMenos.setText("-");
+        jbMenos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMenosActionPerformed(evt);
+            }
+        });
 
         jbIgual.setBackground(new java.awt.Color(255, 102, 0));
         jbIgual.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jbIgual.setText("=");
+        jbIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbIgualActionPerformed(evt);
+            }
+        });
 
         jbSigno.setBackground(new java.awt.Color(204, 204, 204));
         jbSigno.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
-        jbSigno.setText("+/-");
+        jbSigno.setText("(-)");
+        jbSigno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSignoActionPerformed(evt);
+            }
+        });
 
         jbDecimal.setBackground(new java.awt.Color(204, 204, 204));
         jbDecimal.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jbDecimal.setText(".");
+        jbDecimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbDecimalActionPerformed(evt);
+            }
+        });
 
         jb9.setBackground(new java.awt.Color(204, 204, 204));
         jb9.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
@@ -123,6 +167,11 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         jb8.setBackground(new java.awt.Color(204, 204, 204));
         jb8.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jb8.setText("8");
+        jb8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb8ActionPerformed(evt);
+            }
+        });
 
         jb7.setBackground(new java.awt.Color(204, 204, 204));
         jb7.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
@@ -154,6 +203,11 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         jb4.setBackground(new java.awt.Color(204, 204, 204));
         jb4.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jb4.setText("4");
+        jb4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb4ActionPerformed(evt);
+            }
+        });
 
         jb3.setBackground(new java.awt.Color(204, 204, 204));
         jb3.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
@@ -167,10 +221,20 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         jb2.setBackground(new java.awt.Color(204, 204, 204));
         jb2.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jb2.setText("2");
+        jb2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb2ActionPerformed(evt);
+            }
+        });
 
         jb1.setBackground(new java.awt.Color(204, 204, 204));
         jb1.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
         jb1.setText("1");
+        jb1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb1ActionPerformed(evt);
+            }
+        });
 
         jb0.setBackground(new java.awt.Color(204, 204, 204));
         jb0.setFont(new java.awt.Font("Verdana", 0, 17)); // NOI18N
@@ -229,7 +293,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jbDivision, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbMultiplicacion, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                            .addComponent(jbMultiplicacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbSuma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbMenos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbIgual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -285,38 +349,421 @@ public class CalculadoraVisual extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jbParentesis2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbParentesis2ActionPerformed
-        // TODO add your handling code here:
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText(" ) ");
+        else
+            jtDisplay.append(" ) ");                           
     }//GEN-LAST:event_jbParentesis2ActionPerformed
 
     private void jb0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb0ActionPerformed
-        // TODO add your handling code here:
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText("0");
+        else
+            jtDisplay.append("0");
     }//GEN-LAST:event_jb0ActionPerformed
 
     private void jb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb9ActionPerformed
-        // TODO add your handling code here:
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText("9");
+        else
+            jtDisplay.append("9"); 
     }//GEN-LAST:event_jb9ActionPerformed
 
     private void jb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb6ActionPerformed
-        // TODO add your handling code here:
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText("6");
+        else
+            jtDisplay.append("6");
     }//GEN-LAST:event_jb6ActionPerformed
 
     private void jb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb3ActionPerformed
-        // TODO add your handling code here:
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText("3");
+        else
+            jtDisplay.append("3");
     }//GEN-LAST:event_jb3ActionPerformed
 
     private void jb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb5ActionPerformed
-        // TODO add your handling code here:
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText("5");
+        else
+            jtDisplay.append("5"); 
     }//GEN-LAST:event_jb5ActionPerformed
 
     private void jb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb7ActionPerformed
-        // TODO add your handling code here:
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText("7");
+        else
+            jtDisplay.append("7");
     }//GEN-LAST:event_jb7ActionPerformed
 
     private void jbParentesis1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbParentesis1ActionPerformed
-        // TODO add your handling code here:
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText(" ( ");
+        else
+            jtDisplay.append(" ( ");
     }//GEN-LAST:event_jbParentesis1ActionPerformed
+
+    private void jbACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbACActionPerformed
+        jtDisplay.setText("");
+    }//GEN-LAST:event_jbACActionPerformed
+
+    private void jbDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDivisionActionPerformed
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("=ERROR"))
+            jtDisplay.setText(" / ");
+        else if(cadena.contains("="))
+            jtDisplay.setText(cadena.substring(1) + " / ");
+        else
+            jtDisplay.append(" / ");
+    }//GEN-LAST:event_jbDivisionActionPerformed
+
+    private void jb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb8ActionPerformed
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText("8");
+        else
+            jtDisplay.append("8");
+    }//GEN-LAST:event_jb8ActionPerformed
+
+    private void jbMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMultiplicacionActionPerformed
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("=ERROR"))
+            jtDisplay.setText(" * ");
+        else if(cadena.contains("="))
+            jtDisplay.setText(cadena.substring(1) + " * ");
+        else
+            jtDisplay.append(" * ");  
+    }//GEN-LAST:event_jbMultiplicacionActionPerformed
+
+    private void jb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb4ActionPerformed
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText("4");
+        else
+            jtDisplay.append("4");
+    }//GEN-LAST:event_jb4ActionPerformed
+
+    private void jbSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSumaActionPerformed
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("=ERROR"))
+            jtDisplay.setText(" + ");
+        else if(cadena.contains("="))
+            jtDisplay.setText(cadena.substring(1) + " + ");
+        else
+            jtDisplay.append(" + ");
+    }//GEN-LAST:event_jbSumaActionPerformed
+
+    private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText("1");
+        else
+            jtDisplay.append("1");
+    }//GEN-LAST:event_jb1ActionPerformed
+
+    private void jb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2ActionPerformed
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText("2");
+        else
+            jtDisplay.append("2");
+    }//GEN-LAST:event_jb2ActionPerformed
+
+    private void jbMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMenosActionPerformed
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("=ERROR"))
+            jtDisplay.setText(" - ");
+        else if(cadena.contains("="))
+            jtDisplay.setText(cadena.substring(1) + " - ");
+        else
+            jtDisplay.append(" - ");
+    }//GEN-LAST:event_jbMenosActionPerformed
+
+    private void jbDecimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDecimalActionPerformed
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText(".");
+        else
+            jtDisplay.append(".");
+    }//GEN-LAST:event_jbDecimalActionPerformed
+
+    private void jbSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSignoActionPerformed
+        String cadena;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.contains("="))
+            jtDisplay.setText(" -");
+        else
+            jtDisplay.append(" -");
+    }//GEN-LAST:event_jbSignoActionPerformed
+
+  public boolean esOperador(String x){
+        ArrayList<String> operadores;
+        
+        operadores = new ArrayList<String>();
+        operadores.add("+");
+        operadores.add("-");
+        operadores.add("*");
+        operadores.add("/");
+        return operadores.contains(x);
+    }
+
+    public boolean verificaOperadoresRepetidos(String[] analizar, int longitud){
+        int i;
+        boolean verificacion;;
+        
+        verificacion = true;
+        i = 0;
+        while(i < longitud && verificacion){
+            if(esOperador(analizar[i])){
+                if(i == 0)
+                    verificacion = false;
+                else if(i == longitud - 1)
+                    verificacion = false;
+                else if(i == 0)
+                    verificacion = false;
+                else if(esOperador(analizar[i + 1]))
+                    verificacion = false;
+            }
+            i++;
+        }
+        return verificacion;
+    } 
+    
+    private boolean verificaDecimales(String analizar, int longitud){
+        PilaA<Character> pila;
+        int i, digitos;
+        boolean verificacion;
+        char ch;
+        
+        pila = new PilaA<Character>();
+        i = 0;
+        verificacion = true;
+        digitos = 0;
+        while(i < longitud && verificacion){
+            ch = analizar.charAt(i);
+            if(ch == '.'){
+                if(pila.isEmpty()){
+                    pila.push('.');
+                    digitos = 0;
+                }
+                else
+                    verificacion = false;
+            }
+            else if(isDigit(ch))
+                digitos++;
+            else if(esOperador(valueOf(ch))){
+                if(digitos == 0 && !pila.isEmpty())
+                    verificacion = false;
+                else if(!pila.isEmpty())
+                    pila.pop();
+                digitos = 0;      
+            }
+            i++;
+        }// end while
+        if(verificacion)
+            if(!pila.isEmpty() && digitos == 0)
+                verificacion = false;
+        return verificacion;
+    }
+    
+    public boolean verificaParentesis(String[] analizar, int longitud){
+        PilaA<Character> pila;
+        int i;
+        boolean verificacion;
+        
+        pila = new PilaA<Character>();
+        i = 0;
+        verificacion = true;
+        while(i < longitud && verificacion){
+            if(analizar[i].equals("("))
+                  pila.push('(');
+            else if(analizar[i].equals(")"))
+                if(pila.pop() == null)
+                    verificacion = false;
+            i++;
+        }//end while
+        return verificacion && pila.isEmpty();    
+    }
+    
+    private boolean verificaNegativos(String[] analizar, int longitud){
+        boolean verificacion;
+        int i;
+        String analizado;
+        
+        i = 0;
+        verificacion = true;
+        while(i < longitud && verificacion){
+            analizado = analizar[i];
+            if(analizado.length() > 1)
+                if(Double.parseDouble(analizado) < 0)
+                    if(i > 0)
+                        if(analizar[i -1].length() > 1 || isDigit(analizar[i -1].charAt(0)))
+                            verificacion = false;
+            i++;
+        }
+        return verificacion;
+    }
+    
+    /* Método prioridades de los operadores. Regresa 2,
+     * el valor más grande, cuando el dato dado es un * o /. Si es
+     * + o - regresa 1.
+     */
+    public int prioridadOperador(String operador){
+        int prioridad;
+        
+        prioridad = 1;
+        if(operador.equals("*") || operador.equals("/"))
+            prioridad = 2;
+        return prioridad;       
+    }
+    
+    private String invierteNotacion(String[] tokens){
+        int i, longitud;
+        StringBuilder postfija;
+        String elementosStr;
+        char ch;
+        PilaA<String> pila;
+        
+        pila = new PilaA<String>();
+        postfija = new StringBuilder();
+        longitud = tokens.length;
+        for(i = 0; i < longitud; i++){
+            elementosStr = tokens[i];
+            if(esDouble(elementosStr))
+               postfija.append(elementosStr + " ");
+            else if(elementosStr.equals("("))
+                    pila.push(elementosStr);
+            else if(elementosStr.equals(")")){
+                while(!pila.isEmpty() && !pila.peek().equals("("))
+                    postfija.append(pila.pop() + " ");
+                pila.pop();//sacar (
+            }//end else-if
+            else{
+                while(!pila.isEmpty() && prioridadOperador(elementosStr) <= prioridadOperador(pila.peek()))
+                    postfija.append(pila.pop() + " ");
+                pila.push(elementosStr);
+            }      
+        }// end for
+        while(!pila.isEmpty())
+            postfija.append(pila.pop() + " ");
+        return postfija.toString();
+    }
+  
+    public boolean esDouble(String value) {
+        boolean convierte;
+        
+        try {
+            Double.parseDouble(value);
+            convierte = true;
+        } catch (NumberFormatException e) {
+            convierte = false;
+        }
+        return convierte;
+    }
+    
+    private double evaluaPostfija(String[] postfija){
+        PilaA<Double> pila;
+        int longitud, i;
+        double operando1, operando2;
+        String evaluando;
+       
+        pila = new <Double>PilaA();
+        longitud = postfija.length;
+        for(i = 0; i < longitud; i++){
+            evaluando = postfija[i];
+            if(esDouble(evaluando)){
+                pila.push(Double.parseDouble(evaluando));
+            }
+            else{
+                operando1 = pila.pop();
+                operando2 = pila.pop();
+                if(evaluando.equals("+"))
+                    pila.push(operando2 + operando1);
+                else if(evaluando.equals("-"))
+                    pila.push(operando2 - operando1);
+                else if(evaluando.equals("*"))
+                    pila.push(operando2 * operando1);
+                else
+                    pila.push(operando2 / operando1);
+            }//end else 
+                
+        }//end for
+        return pila.pop();
+    }
+    
+    private void jbIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIgualActionPerformed
+        String cadena, postfija, tokens[], respuestaString;
+        int longitud;
+        double respuestaNumerica;
+        
+        cadena = jtDisplay.getText();
+        if(cadena.length() > 0){
+            tokens = cadena.trim().split("[ \\  ]+");
+            longitud = tokens.length;
+//////            for(int i  = 0; i < tokens.length; i++)
+//////                System.out.println("."+tokens[i]+".");
+            if(verificaOperadoresRepetidos(tokens, longitud) && verificaDecimales(cadena, cadena.length()) && verificaParentesis(tokens, longitud) && verificaNegativos(tokens, longitud)){
+                postfija = invierteNotacion(tokens);
+//////                System.out.println(postfija);
+                respuestaNumerica = evaluaPostfija(postfija.split(" "));
+                respuestaString = valueOf(respuestaNumerica);
+            }
+            else
+                respuestaString = "ERROR"; 
+        }
+            
+             
+        else
+            respuestaString = "";
+        jtDisplay.setText("=" + respuestaString);
+        
+    }//GEN-LAST:event_jbIgualActionPerformed
 
     /**
      * @param args the command line arguments
