@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyectopila;
 
 import static java.lang.Character.isDigit;
@@ -10,13 +5,17 @@ import static java.lang.String.valueOf;
 import java.util.ArrayList;
 
 /**
- *
- * @author RVAZQUEZLO
+ * Esta clase imita la funcionalidad de una calculadora con una interfaz grafica
+ * amigable para el usuario
+ * @author Jerusa Chavero González
+ * @author Marian Shanti Sánchez Barbero
+ * @author Regina Vázquez Santa María López
+ * @author Damián Pérez Landeros
  */
 public class CalculadoraVisual extends javax.swing.JFrame {
 
     /**
-     * Creates new form CalculadoraVisual
+     * Constructor vacio
      */
     public CalculadoraVisual() {
         initComponents();
@@ -350,6 +349,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+    /**
+     * Define la funcionalidad del boton con el numero 2
+     * @param evt 
+     */
     private void jbParentesis2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbParentesis2ActionPerformed
         String cadena;
         
@@ -360,6 +363,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append(" ) ");                           
     }//GEN-LAST:event_jbParentesis2ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el numero 0
+     * @param evt 
+     */
     private void jb0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb0ActionPerformed
         String cadena;
         
@@ -370,6 +377,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append("0");
     }//GEN-LAST:event_jb0ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el numero 9
+     * @param evt 
+     */
     private void jb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb9ActionPerformed
         String cadena;
         
@@ -380,6 +391,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append("9"); 
     }//GEN-LAST:event_jb9ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el numero 6
+     * @param evt 
+     */
     private void jb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb6ActionPerformed
         String cadena;
         
@@ -390,6 +405,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append("6");
     }//GEN-LAST:event_jb6ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el numero 3
+     * @param evt 
+     */
     private void jb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb3ActionPerformed
         String cadena;
         
@@ -400,6 +419,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append("3");
     }//GEN-LAST:event_jb3ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el numero 5
+     * @param evt 
+     */
     private void jb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb5ActionPerformed
         String cadena;
         
@@ -410,6 +433,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append("5"); 
     }//GEN-LAST:event_jb5ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el numero 7
+     * @param evt 
+     */
     private void jb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb7ActionPerformed
         String cadena;
         
@@ -420,6 +447,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append("7");
     }//GEN-LAST:event_jb7ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el parentesis izquierdo
+     * @param evt 
+     */
     private void jbParentesis1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbParentesis1ActionPerformed
         String cadena;
         
@@ -430,10 +461,18 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append(" ( ");
     }//GEN-LAST:event_jbParentesis1ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton para borrar (AC)
+     * @param evt 
+     */
     private void jbACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbACActionPerformed
         jtDisplay.setText("");
     }//GEN-LAST:event_jbACActionPerformed
 
+    /**
+     * Define la funcionalidad del boton de division
+     * @param evt 
+     */
     private void jbDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDivisionActionPerformed
         String cadena;
         
@@ -446,6 +485,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append(" / ");
     }//GEN-LAST:event_jbDivisionActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el numero 8
+     * @param evt 
+     */
     private void jb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb8ActionPerformed
         String cadena;
         
@@ -456,6 +499,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append("8");
     }//GEN-LAST:event_jb8ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton de multiplicacion
+     * @param evt 
+     */
     private void jbMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMultiplicacionActionPerformed
         String cadena;
         
@@ -468,6 +515,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append(" * ");  
     }//GEN-LAST:event_jbMultiplicacionActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el numero 4
+     * @param evt 
+     */
     private void jb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb4ActionPerformed
         String cadena;
         
@@ -478,6 +529,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append("4");
     }//GEN-LAST:event_jb4ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton de suma
+     * @param evt 
+     */
     private void jbSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSumaActionPerformed
         String cadena;
         
@@ -490,6 +545,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append(" + ");
     }//GEN-LAST:event_jbSumaActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el numero 1
+     * @param evt 
+     */
     private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
         String cadena;
         
@@ -500,6 +559,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append("1");
     }//GEN-LAST:event_jb1ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton con el numero 2
+     * @param evt 
+     */
     private void jb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2ActionPerformed
         String cadena;
         
@@ -510,6 +573,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append("2");
     }//GEN-LAST:event_jb2ActionPerformed
 
+    /**
+     * Define la funcionalidad del boton de resta
+     * @param evt 
+     */
     private void jbMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMenosActionPerformed
         String cadena;
         
@@ -522,6 +589,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append(" - ");
     }//GEN-LAST:event_jbMenosActionPerformed
 
+    /**
+     * Define la funcionalidad del boton de punto decimal
+     * @param evt 
+     */
     private void jbDecimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDecimalActionPerformed
         String cadena;
         
@@ -532,6 +603,10 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append(".");
     }//GEN-LAST:event_jbDecimalActionPerformed
 
+    /**
+     * Define la funcionalidad del boton de cambio de signo
+     * @param evt 
+     */
     private void jbSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSignoActionPerformed
         String cadena;
         
@@ -542,7 +617,15 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             jtDisplay.append(" -");
     }//GEN-LAST:event_jbSignoActionPerformed
 
-  public boolean esOperador(String x){
+    /**
+     * Determina si un String x es un operador
+     * @param x: String a evaluar
+     * @return <ul>
+     * <li>true: si x es un operador</li>
+     * <li>false: si x no es un operador</li>
+     * </ul>   
+     */
+    public boolean esOperador(String x){
         ArrayList<String> operadores;
         
         operadores = new ArrayList<String>();
@@ -553,6 +636,19 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         return operadores.contains(x);
     }
 
+    /**
+     * Determina si hay algun problema de sintaxis con los operadores  
+     * @param analizar: un arreglo de String
+     * @param longitud: la longitud del arreglo
+     * @return <ul>
+     * <li>true: si no hay ningun problema</li>
+     * <li>false: <ol>
+     * <li>Si hay dos operadores juntos</li>
+     * <li>Si hay operador sin operando antes o despues</li>
+     * </ol>
+     * </ul>  
+     * @see esOperador
+     */
     public boolean verificaOperadoresRepetidos(String[] analizar, int longitud){
         int i;
         boolean verificacion;;
@@ -565,8 +661,6 @@ public class CalculadoraVisual extends javax.swing.JFrame {
                     verificacion = false;
                 else if(i == longitud - 1)
                     verificacion = false;
-                else if(i == 0)
-                    verificacion = false;
                 else if(esOperador(analizar[i + 1]))
                     verificacion = false;
             }
@@ -575,6 +669,20 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         return verificacion;
     } 
     
+    /**
+     * Determina si hay algun problema de sintaxis con los decimales 
+     * @param analizar: un arreglo de String
+     * @param longitud: la longitud del arreglo
+     * @return <ul>
+     * <li>true: si no hay ningun problema</li>
+     * <li>false: <ol>
+     * <li>Si hay dos decimales en el mismo numero</li>
+     * <li>Si hay un decimal pegado a un operador a la derecha</li>
+     * <li>Si hay un decimal solo</li>
+     * </ol>
+     * </ul>  
+     * @see esOperador
+     */
     private boolean verificaDecimales(String analizar, int longitud){
         PilaA<Character> pila;
         int i, digitos;
@@ -587,14 +695,13 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         digitos = 0;
         while(i < longitud && verificacion){
             ch = analizar.charAt(i);
-            if(ch == '.'){
+            if(ch == '.')
                 if(pila.isEmpty()){
                     pila.push('.');
                     digitos = 0;
-                }
+                }//end inner-if
                 else
                     verificacion = false;
-            }
             else if(isDigit(ch))
                 digitos++;
             else if(esOperador(valueOf(ch))){
@@ -612,6 +719,18 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         return verificacion;
     }
     
+    /**
+     * Determina si hay algun problema de sintaxis con los perentesis 
+     * @param analizar: un arreglo de String
+     * @param longitud: la longitud del arreglo
+     * @return <ul>
+     * <li>true: si no hay ningun problema</li>
+     * <li>false: <ol>
+     * <li>Si hay un perentesis izquierdo sin parentesis derecho</li>
+     * <li>Si hay un parentesis derecho sin izquierdo</li>
+     * </ol>
+     * </ul>  
+     */
     public boolean verificaParentesis(String[] analizar, int longitud){
         PilaA<Character> pila;
         int i;
@@ -631,6 +750,15 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         return verificacion && pila.isEmpty();    
     }
     
+    /**
+     * Determina si hay algun problema con los signos negativos 
+     * @param analizar: un arreglo de String
+     * @param longitud: la longitud del arreglo
+     * @return <ul>
+     * <li>true: si no hay ningun problema</li>
+     * <li>false: si hay un signo negativo sin operador cuando corresponde</li>
+     * </ul>  
+     */
     private boolean verificaNegativos(String[] analizar, int longitud){
         boolean verificacion;
         int i;
@@ -646,13 +774,19 @@ public class CalculadoraVisual extends javax.swing.JFrame {
                         if(analizar[i -1].length() > 1 || isDigit(analizar[i -1].charAt(0)))
                             verificacion = false;
             i++;
-        }
+        }//end while
         return verificacion;
     }
     
-    /* Método prioridades de los operadores. Regresa 2,
-     * el valor más grande, cuando el dato dado es un * o /. Si es
-     * + o - regresa 1.
+    /**
+     * Determina la prioridad de operador comparda con los 4 operadores. 
+     * Este metodo asume que ya se determino que el parametro es un operador
+     * +, -, * o /
+     * @param operador: operador para el cual se quiere saber la prioridad
+     * @return <ul>
+     * <li>1: si el operador es + o -</li>
+     * <li>2: si el operador es * o /</li>
+     * </ul>  
      */
     public int prioridadOperador(String operador){
         int prioridad;
@@ -663,11 +797,38 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         return prioridad;       
     }
     
+    /**
+     * Determina si un String se puede convertir en double
+     * @param value: String a evaluar
+     * @return<ul>
+     * <li>true: si value puede ser interpretado como double</li>
+     * <li>false: si value no puede ser interpretado como double</li>
+     * </ul> 
+     */
+    public boolean esDouble(String value) {
+        boolean convierte;
+        
+        try {
+            Double.parseDouble(value);
+            convierte = true;
+        } catch (NumberFormatException e) {
+            convierte = false;
+        }
+        return convierte;
+    }
+    
+    /**
+     * Convierte una operacion en notacion infija a una en notacion postfija
+     * @param tokens: arreglo de String que contiene la operacion en notacion
+     * infija
+     * @return: la operacion en notacion postfija
+     * @see esDouble
+     * @see prioridadOperador
+     */
     private String invierteNotacion(String[] tokens){
         int i, longitud;
         StringBuilder postfija;
         String elementosStr;
-        char ch;
         PilaA<String> pila;
         
         pila = new PilaA<String>();
@@ -694,19 +855,14 @@ public class CalculadoraVisual extends javax.swing.JFrame {
             postfija.append(pila.pop() + " ");
         return postfija.toString();
     }
-  
-    public boolean esDouble(String value) {
-        boolean convierte;
-        
-        try {
-            Double.parseDouble(value);
-            convierte = true;
-        } catch (NumberFormatException e) {
-            convierte = false;
-        }
-        return convierte;
-    }
     
+    /**
+     * Evalua una operacion en notacion postfija 
+     * @param postfija: arreglo de String que contiene la operacion en notacion
+     * infija
+     * @return: resultado de la operacion postfija
+     * @see esDouble
+     */
     private double evaluaPostfija(String[] postfija){
         PilaA<Double> pila;
         int longitud, i;
@@ -717,9 +873,8 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         longitud = postfija.length;
         for(i = 0; i < longitud; i++){
             evaluando = postfija[i];
-            if(esDouble(evaluando)){
+            if(esDouble(evaluando))
                 pila.push(Double.parseDouble(evaluando));
-            }
             else{
                 operando1 = pila.pop();
                 operando2 = pila.pop();
@@ -731,12 +886,15 @@ public class CalculadoraVisual extends javax.swing.JFrame {
                     pila.push(operando2 * operando1);
                 else
                     pila.push(operando2 / operando1);
-            }//end else 
-                
+            }//end else        
         }//end for
         return pila.pop();
     }
     
+    /**
+     * Define la funcionalidad del boton de igual
+     * @param evt 
+     */
     private void jbIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIgualActionPerformed
         String cadena, postfija, tokens[], respuestaString;
         int longitud;
@@ -746,26 +904,21 @@ public class CalculadoraVisual extends javax.swing.JFrame {
         if(cadena.length() > 0){
             tokens = cadena.trim().split("[ \\  ]+");
             longitud = tokens.length;
-            for(int i  = 0; i < tokens.length; i++)
-                System.out.println("."+tokens[i]+".");
             if(verificaOperadoresRepetidos(tokens, longitud) && verificaDecimales(cadena, cadena.length()) && verificaParentesis(tokens, longitud) && verificaNegativos(tokens, longitud)){
                 postfija = invierteNotacion(tokens);
-                System.out.println(postfija);
                 respuestaNumerica = evaluaPostfija(postfija.split(" "));
                 respuestaString = valueOf(respuestaNumerica);
-            }
+            }//end inner-if
             else
                 respuestaString = "ERROR"; 
-        }
-            
-             
+        }//end outter-if    
         else
             respuestaString = "";
         jtDisplay.setText("=" + respuestaString);
-        
     }//GEN-LAST:event_jbIgualActionPerformed
 
     /**
+     * main de CalculadoraVisual
      * @param args the command line arguments
      */
     public static void main(String args[]) {
