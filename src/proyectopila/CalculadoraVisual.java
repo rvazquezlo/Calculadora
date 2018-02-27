@@ -625,7 +625,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
      * <li>false: si x no es un operador</li>
      * </ul>   
      */
-    private boolean esOperador(String x){
+    public boolean esOperador(String x){
         ArrayList<String> operadores;
         
         operadores = new ArrayList<String>();
@@ -649,7 +649,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
      * </ul>  
      * @see esOperador
      */
-    private boolean verificaOperadoresRepetidos(String[] analizar, int longitud){
+    public boolean verificaOperadoresRepetidos(String[] analizar, int longitud){
         int i;
         boolean verificacion;;
         
@@ -683,7 +683,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
      * </ul>  
      * @see esOperador
      */
-    private boolean verificaDecimales(String analizar, int longitud){
+    public boolean verificaDecimales(String analizar, int longitud){
         PilaA<Character> pila;
         int i, digitos;
         boolean verificacion;
@@ -731,7 +731,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
      * </ol>
      * </ul>  
      */
-    private boolean verificaParentesis(String[] analizar, int longitud){
+    public boolean verificaParentesis(String[] analizar, int longitud){
         PilaA<Character> pila;
         int i;
         boolean verificacion;
@@ -759,7 +759,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
      * <li>false: si hay un signo negativo sin operador cuando corresponde</li>
      * </ul>  
      */
-    private boolean verificaNegativos(String[] analizar, int longitud){
+    public boolean verificaNegativos(String[] analizar, int longitud){
         boolean verificacion;
         int i;
         String analizado;
@@ -788,7 +788,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
      * <li>2: si el operador es * o /</li>
      * </ul>  
      */
-    private int prioridadOperador(String operador){
+    public int prioridadOperador(String operador){
         int prioridad;
         
         prioridad = 1;
@@ -805,7 +805,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
      * <li>false: si value no puede ser interpretado como double</li>
      * </ul> 
      */
-    private boolean esDouble(String value) {
+    public boolean esDouble(String value) {
         boolean convierte;
         
         try {
@@ -825,7 +825,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
      * @see esDouble
      * @see prioridadOperador
      */
-    private String invierteNotacion(String[] tokens){
+    public String invierteNotacion(String[] tokens){
         int i, longitud;
         StringBuilder postfija;
         String elementosStr;
@@ -863,7 +863,7 @@ public class CalculadoraVisual extends javax.swing.JFrame {
      * @return: resultado de la operacion postfija
      * @see esDouble
      */
-    private double evaluaPostfija(String[] postfija){
+    public double evaluaPostfija(String[] postfija){
         PilaA<Double> pila;
         int longitud, i;
         double operando1, operando2;
